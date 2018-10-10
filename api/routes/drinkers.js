@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const multer = require('multer');
+const upload = multer({dest: 'uploads/'});
+
 
 const moment = require('moment');
 
@@ -69,8 +72,9 @@ router.get('/password/:drinkerPass', (req, res, next)=>{
     });
 });
 
-router.post('/', (req, res, next)=> {
+router.post('/', upload.single('drinkerImage'),(req, res, next)=> {
 
+    console.log(req.file);  
     const litersOfBlood = parseFloat(req.body.weight) * .07 * 1.06;
     const alcoholRemovalRate = (((parseFloat(req.body.weight)/10)/60)/60) /1000 ;//every millisecond
     
