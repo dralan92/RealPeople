@@ -1,0 +1,20 @@
+{
+  "name": "blood-alcohol-rest",
+  "version": "1.0.0",
+  "description": "REST API for BAC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Alan Sebastian",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "moment": "^2.22.2",
+    "mongoose": "^5.2.17",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4"
+  }
+}
